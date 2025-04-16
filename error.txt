@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Vinit\Python Projects\WinPilot\main.py", line 42, in <module>
+    main()
+  File "C:\Vinit\Python Projects\WinPilot\main.py", line 35, in main
+    window = MainWindow()
+             ^^^^^^^^^^^^
+  File "C:\Vinit\Python Projects\WinPilot\ui\main_window.py", line 57, in __init__
+    self.process_tab = ProcessTab()
+                       ^^^^^^^^^^^^
+  File "C:\Vinit\Python Projects\WinPilot\ui\process_tab.py", line 79, in __init__
+    self.refresh()
+  File "C:\Vinit\Python Projects\WinPilot\ui\process_tab.py", line 194, in refresh
+    self.process_list = get_processes()
+                        ^^^^^^^^^^^^^^^
+  File "C:\Vinit\Python Projects\WinPilot\utils\process_utils.py", line 57, in get_processes
+    'cpu_percent': proc.cpu_percent(interval=0.1),
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vinit\AppData\Roaming\Python\Python312\site-packages\psutil\__init__.py", line 1036, in cpu_percent
+    time.sleep(interval)
+KeyboardInterrupt
+^C

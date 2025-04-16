@@ -1,0 +1,102 @@
+Windows System Manager - Installation Guide
+============================================
+
+⚠️ IMPORTANT: WINDOWS ONLY APPLICATION ⚠️
+---------------------------------------
+This application is designed exclusively for Windows operating systems.
+It will NOT run on macOS, Linux, or any other operating system due to its
+dependency on Windows-specific libraries and APIs.
+
+REQUIREMENTS:
+-------------
+- Windows 10 or Windows 11 (64-bit recommended)
+- Python 3.7 or higher
+- Administrator privileges (for most operations)
+
+INSTALLATION STEPS:
+------------------
+
+Option 1: Quick Setup (Recommended)
+-----------------------------------
+1. Extract the WindowsMaster.zip file to a folder of your choice
+
+2. Double-click the run_windows_system_manager.bat file
+   For full functionality, right-click and select "Run as administrator"
+   
+   This batch file will automatically:
+   - Check if Python is installed
+   - Install required dependencies if needed
+   - Launch the application
+
+Option 2: Manual Installation
+----------------------------
+1. Make sure you have Python installed on your Windows system
+   Download from: https://www.python.org/downloads/windows/
+
+2. Extract the WindowsMaster.zip file to a folder of your choice
+
+3. Open Command Prompt as Administrator
+   (Right-click Command Prompt and select "Run as administrator")
+
+4. Navigate to the extracted folder:
+   cd path\to\extracted\folder
+
+5. Install the required dependencies:
+   pip install PyQt5 psutil pywin32
+
+6. Run the application:
+   python main.py
+
+TROUBLESHOOTING:
+---------------
+
+If you encounter errors during installation or when running the application:
+
+- Make sure you're running the latest version of pip:
+  python -m pip install --upgrade pip
+
+- If you have problems installing pywin32, you can download the appropriate
+  installer for your Python version from:
+  https://github.com/mhammond/pywin32/releases
+
+- Some features require administrator privileges to work properly.
+  Always run Command Prompt as Administrator when starting the application.
+
+- If you see import errors, ensure all dependencies are installed:
+  pip install -r requirements.txt
+
+- If you get "DLL load failed while importing QtWidgets" error:
+  1. Install Visual C++ Redistributable for Visual Studio 2019:
+     Download from: https://aka.ms/vs/17/release/vc_redist.x64.exe
+  2. Uninstall and reinstall PyQt5 with specific version:
+     pip uninstall PyQt5 PyQt5-Qt5 PyQt5-sip
+     pip install PyQt5==5.15.9
+  3. Restart your computer and try again
+
+- For other PyQt5 issues, try using Anaconda/Miniconda (RECOMMENDED):
+  1. Install from: https://docs.conda.io/en/latest/miniconda.html
+  2. Create environment: conda create -n windows_manager python=3.9
+  3. Activate: conda activate windows_manager
+  4. Install packages: conda install pyqt psutil && pip install pywin32
+  5. If you need the Task Scheduler functionality: pip install pywin32==228
+  
+- If you get "TypeError: QIcon(): argument 1 has unexpected type 'QBuffer'" error:
+  This is related to how SVG icons are loaded. Try these solutions:
+  1. Install PyQt5-tools: pip install PyQt5-tools
+  2. Update your conda environment: conda install -c anaconda pyqt
+
+USAGE:
+-----
+The application provides a tabbed interface for various system management tasks:
+
+- Memory Management: View and optimize memory usage
+- Drive Management: View drive information and modify labels
+- Process Monitor: View running processes and manage them
+- Background Tasks: Monitor services, startup items, and scheduled tasks
+- File Operations: Navigate, copy, move, and delete files
+- Application Control: Install and uninstall applications
+
+Most operations can be accessed through right-click context menus.
+
+WARNING: Use caution when managing system processes or services, as stopping critical
+system components may affect system stability.
