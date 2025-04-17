@@ -56,36 +56,37 @@ A **Windows desktop application** built with Python that acts as an all-in-one *
 2. Run - Python main.py
 
 
-## Folder Structure
+## 📂 Project Structure
+
+```bash
 WindowsMaster/
 ├── resources/
-│   ├── icons.py         # SVG icon definitions for the application UI
-│   └── styles.py        # CSS-style definitions for the application UI
+│   ├── icons.py           # SVG icon definitions for the application UI
+│   └── styles.py          # CSS-style definitions for the application UI
 ├── ui/
-│   ├── __init__.py      # UI package initialization
-│   ├── app_tab.py       # Application management tab (install/uninstall apps)
-│   ├── background_tab.py # Background tasks monitoring (services, startup items)
-│   ├── drive_tab.py     # Drive management tab (view, label drives)
-│   ├── file_tab.py      # File operations tab (copy, move, delete files)
-│   ├── main_window.py   # Main application window with tab container
-│   ├── memory_tab.py    # Memory management tab (view usage, optimize)
-│   └── process_tab.py   # Process monitoring tab (view, end processes)
+│   ├── __init__.py        # UI package initialization
+│   ├── app_tab.py         # Application management tab (install/uninstall apps)
+│   ├── background_tab.py  # Background tasks monitoring (services, startup items)
+│   ├── drive_tab.py       # Drive management tab (view, label drives)
+│   ├── file_tab.py        # File operations tab (copy, move, delete files)
+│   ├── main_window.py     # Main application window with tab container
+│   ├── memory_tab.py      # Memory management tab (view usage, optimize)
+│   └── process_tab.py     # Process monitoring tab (view, end processes)
 ├── utils/
-│   ├── __init__.py      # Utils package initialization
-│   ├── app_utils.py     # Utilities for managing applications
-│   ├── background_utils.py # Utilities for background tasks
-│   ├── drive_utils.py   # Utilities for drive operations
-│   ├── file_utils.py    # Utilities for file operations
-│   ├── memory_utils.py  # Utilities for memory monitoring and optimization
-│   └── process_utils.py # Utilities for process monitoring and control
-├── main.py              # Main application entry point
-└── pyproject.toml       # Project dependencies and metadata
+│   ├── __init__.py        # Utils package initialization
+│   ├── app_utils.py       # Utilities for managing applications
+│   ├── background_utils.py# Utilities for background tasks
+│   ├── drive_utils.py     # Utilities for drive operations
+│   ├── file_utils.py      # Utilities for file operations
+│   ├── memory_utils.py    # Utilities for memory monitoring and optimization
+│   └── process_utils.py   # Utilities for process monitoring and control
+├── main.py                # Main application entry point
+└── pyproject.toml         # Project dependencies and metadata
+
 
 
 ## When Application freezes use fix_freeze.py before running pyinstaller command below 
-## Build Executable with PyInstaller
-
-To create a standalone Windows executable for **Windows System Manager**, use the following command:
+## Build Executable with PyInstaller 0 To create a standalone Windows executable for **Windows System Manager**, use the following command:
 
 ```bash
 pyinstaller --name "Windows System Manager" --windowed --icon=generated-icon.png \
